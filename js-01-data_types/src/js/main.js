@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 const userName = "Dam";
 const userLastName = "Martinez";
 let from = "Estado de mexico";
@@ -10,7 +10,8 @@ console.log (
 );
 
 console.log (typeof numHome); 
-=======
+
+
 console.log("Session JS01 - Data Types");
 
 /* ================================================================
@@ -240,4 +241,4 @@ console.log("Mi calificación es " + calificaciones); // "Mi calificación es 8,
 // el método JSON.stringyfy( objeto );
 
 // Resumen : https://www.w3schools.com/js/js_type_conversion.asp
->>>>>>> main
+
