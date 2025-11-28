@@ -76,9 +76,9 @@ const nombreCompleto = (nombre, apellido) => `${nombre} ${apellido} estudiante d
 const areaRectangulo = (largo, ancho) => largo * ancho;
 
 
-const calculate = (a, b, operationFunction) => {
+//const calculate = (a, b, operationFunction) => {
   return operationFunction (a,b);
-};
+//};
 
 const suma = (a,b) => a + b; 
 const resta = (a,b) => a - b; 
@@ -96,9 +96,9 @@ console.log (`El resultado de la division es: ${calculate (10,100, division)}`);
  * @param {string} lastName apellido de la persona
  * @returns concatenación del nombre y apellido de la persona en la cohorte Ch62
 */
-const printFullName = function (firstName, lastName) {
+//const printFullName = function (firstName, lastName) {
   return `${firstName} ${lastName} estudiante de la Ch62`;
-};
+//};
 
 console.log( printFullName("Johan", "Gonzalez") );
 /*
@@ -119,7 +119,7 @@ sintaxis:
 */
 
 // Convertir la función printFullName a función flecha
-const nombreCompleto = (nombre, apellido) => `${nombre} ${apellido} estudiante de la Ch62`;
+//const nombreCompleto = (nombre, apellido) => `${nombre} ${apellido} estudiante de la Ch62`;
 
 /*
  ------------ Parámetros por defecto -----------------------
@@ -180,6 +180,7 @@ const multiply = (a, b) => a * b;
 // Crear una función que sume dos números
 const sum = (a, b) => a + b;
 const divide = (a, b) => a / b;
+const residuo = (a, b) => a % b; 
 
 
 console.log(`Realizando una resta: ${calculate(5, 3, subtract)}`); // 2
@@ -191,3 +192,4 @@ console.log(`Realizando una división: ${calculate(6, 3, divide )}`); // 2
 // Aplicar una función que calcule la potencia de un número
 console.log(`Realizando una división: ${calculate(6, 3, (a, b) => a ** b ) }`); // Math.pow(a,b) 
 // Aplicar una función que calcule el residuo de una devisión, para saber si 6 es divisible entre 3;
+console.log (`Relizar calculo de los residuos: ${calculate(6,3, residuo)}`); 
