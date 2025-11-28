@@ -65,3 +65,27 @@ sintaxis:
         instrucciones;
     };
 */
+
+
+const printFullName = function (firstName, lastName) {
+  return `${firstName} ${lastName} estudiante de la Ch62`;
+}; 
+
+const nombreCompleto = (nombre, apellido) => `${nombre} ${apellido} estudiante de la Ch62`; 
+
+const areaRectangulo = (largo, ancho) => largo * ancho;
+
+
+const calculate = (a, b, operationFunction) => {
+  return operationFunction (a,b);
+};
+
+const suma = (a,b) => a + b; 
+const resta = (a,b) => a - b; 
+const multiplicacion = (a,b) => a * b; 
+const division = (a,b) => a / b; 
+
+console.log (`El resultado de la suma es: ${calculate (10,100, suma)}`); 
+console.log (`El resultado de la resta es: ${calculate (10,100, resta)}`); 
+console.log (`El resultado de la multiplicacion es: ${calculate (10,100, multiplicacion)}`); 
+console.log (`El resultado de la division es: ${calculate (10,100, division)}`); 
