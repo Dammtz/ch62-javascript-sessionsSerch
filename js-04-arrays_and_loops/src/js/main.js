@@ -13,4 +13,4 @@ console.log(`Accediendo al primer elemento:  ${ techStack[0] }` ); // "HTML"
 console.log (`Accediendo al segundo elemento:  ${ techStack[1] }`); // "CSS"
 
 // Acceder al último elemento (longitud - 1)
-console.log (`Accediendo al ultimo elemento:  ${ techStack[length-1] }` ); // "JavaScipt"
+console.log (`Accediendo al ultimo elemento:  ${ techStack[ techStack.length-1] }` ); // "JavaScipt"
