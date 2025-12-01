@@ -146,3 +146,17 @@ const getWeather = (codigo) => {
 
 console.log (getWeather(0));
 */ 
+
+/*
+Ejercicio Dam 
+ Realizar una función que reciba un número y retorne
+ "Par" si el número es par o "Impar" si el número es impar.
+ Usar el operador ternario.
+
+
+const parImpar = (numero) => {
+    return numero%2 === 0 ? "Numero par" : "Numero impar";
+}
+
+console.log (parImpar(21));
+*/
