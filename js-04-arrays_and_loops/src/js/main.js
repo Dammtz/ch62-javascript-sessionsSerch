@@ -175,22 +175,6 @@ console.log(`Imprimiendo: ${printingNow}`); // thesis.pdf (El primero que llegó
    5. Muestra la lista actualizada.
    6. Atiende (elimina) la primera tarea de la lista y muéstrala.
 
-
- const taskList = []; 
-  taskList.push ("Tender cama", "Lavar trastes", "Ordenar cuarto"); // Agregar 3 tareas 
-  console.log ("Lista de tareas por hacer:" + taskList.join (" -"));  // Mostrar lista completa 
-
-  const fisrtTask = tasklist.shift(); // Retirar la primera tarea de la lista 
-   console.log ('Tarea hecha', fisrtTask);
-   taskList.unshift ("Pagar la luz"); // Agregar tarea urgente al inicio de la lista 
-   console.log ("Lista actualizada de mis tareas", tasklist.join ("-")); // Mostrar lista actualizada 
-
-   const secondTask = taskList.shift(); // Atendindo la primera tarea de la lista 
-   console.log ("Tarea hecha:", secondTask); 
-   */ 
-
-   // TODO: RETO FINAL (Simulación de Cajero)
-
 */
 const taskList = []; 
 taskList.push ("Lavar los trastes", "Recoger los juguetes", "Limpiar la silla de la bebe"); // paso 1 
@@ -379,21 +363,22 @@ for (const country of countries) {
 // 1. Usa un ciclo FOR, o WHILE o FOR-OF para recorrer los movimientos.
 // 2. Suma los valores a una variable 'totalBalance'.
 // 3. Imprime el balance final.
-const transactions = [100.00, -50.00, 200.00, -100.00, 500.00]; //Array movimientos 
-let totalBalance = 0;  // Variable para el balance total 
+const transactions1 = [100.00, -50.00, 200.00, -100.00, 500.00]; //Array movimientos 
+let totalBalance1 = 0;  // Variable para el balance total 
 
-for (const monto of transactions) {
-       totalBalance += monto; // sumar valores a una variable 
-       console.log ('Movimiento:', monto, 'Balance actual:', totalBalance);
+// Imprime todos los movimientos y el balance actual en cada iteración
+for (const movim of transactions1) {
+       totalBalance1 += movim; // sumar valores a una variable 
+       console.log ('Movimiento:', monto, 'Balance actual:', totalBalance1);
 }
 
 
 const transactions = [100.00, -50.00, 200.00, -100.00, 500.00];
 let totalBalance = 0;
 
-// usando for of 
-for (movimiento of transactions) { //Recorriendo cada movimiento del array
-   totalBalance += movimiento; //Sumando cada movimiento (valor) a la variable (balance total)
+// usando for of y solo imprimiendo el balance final
+for (monto of transactions) { //Recorriendo cada movimiento del array
+   totalBalance += monto; //Sumando cada movimiento (valor) a la variable (balance total)
 }; 
 
 console.log ("El balance final es: " + totalBalance); // Imprimiendo el balance final
