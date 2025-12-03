@@ -10,6 +10,9 @@ console.log("Sesión JS-04: Arrays y Bucles");
    para identificar qué hay dentro.
 */
 const myArray = [true, 42, "Hola", null, { nombre: "Juan" }, [1, 2, 3 ]];
+// Pueden ponerse valores de cualquier tipo: booleanos, números, strings.
+
+
 
 // --- 1. Definición ---
 // Sintaxis moderna: Usamos corchetes [] (Array Literal)
@@ -22,6 +25,8 @@ const fruits = new Array(); // array using constructor (less common)
 const numeros = [ 5 ]; // array with one element
 const numbers = new Array(5); // array with 5 empty slots [ <5 empty items> ]
 
+
+
 // --- 2. Acceso a Elementos ---
 // Los índices comienzan en 0 (Zero-based indexing).
 // [0] -> Primer elemento
@@ -32,6 +37,7 @@ const techStack = ["HTML", "CSS", "JavaScript"];
 // Acceder al primer elemento
 console.log( techStack.length ); // 3
 console.log(`Accediendo al primer elemento:  ${ techStack[0] }` ); // "HTML"
+//.length property gives the number of elements in the array
 
 // Accediendo al segundo elemento
 console.log (`Accediendo al segundo elemento:  ${ techStack[1] }`); // "CSS"
@@ -44,19 +50,24 @@ console.log(`Accediendo al segundo elemento: ${ techStack[1] }`);
 console.log(`Accediendo al último elemento: ${ techStack[ techStack.length - 1 ] }`);
 
 // --- 3. Modificación de Elementos ---
+//Se le indica el índice y se asigna un nuevo valor.
 techStack[1] = "Sass"; // Cambiando "CSS" por "Sass"
 console.log("Después de la modificación:", techStack); // ["HTML", "Sass", "JavaScript"]
 
+
 // Agregar un nuevo elemento al final
-// techStack[3]
-techStack[ techStack.length ] =  "TypeScript"; // ["HTML", "Sass", "JavaScript", "TypeScript"]
+// techStack[3] 
+techStack[ techStack.length ] =  "TypeScript"; // ["HTML", "Sass", "JavaScript", "TypeScript"] 
+// Nos indica la siguiente posición disponible por lo que agrega al final.
+
 
 
 /* ================================================================
    BLOQUE 2: MÉTODOS DE ARRAYS (Add/Remove) 
    ================================================================
    JavaScript nos da métodos para manipular la lista como una pila o cola.
-*/
+*/ 
+// --- Agregar Elementos ---
 const shoppingList = ["Leche", "Huevos"];
 
 // 1. push(): Agrega al FINAL (El más usado)
@@ -80,16 +91,23 @@ console.log("Lista actual:", shoppingList);
 const firstRemoved = shoppingList.shift();
 console.log(`Eliminado con shift: ${firstRemoved}`); // "Café"
 
- 
+
+
 // --- Método splice() ---
 // Permite eliminar o agregar elementos en cualquier posición
 const colors = ["Rojo", "Verde", "Azul", "Amarillo", "Morado", "Naranja"];
 console.log("Colores iniciales:", colors.toString() ); // "Rojo,Verde,Azul,Amarillo,Morado,Naranja"
 console.log("Colores iniciales:", colors.join(" - ") ); // "Rojo - Verde - Azul - Amarillo - Morado - Naranja"
 
-// Agregar 2 elementos en el índice 2, sin eliminar otros elementos
+
+//El metodo splice recibe 3 parámetros: (índice, cantidadEliminar, elementosAgregar...)
+// Agregar elementos en el índice 2, sin eliminar nada
 colors.splice(2, 0, "Rosa", "Cian");
-console.log("Después de agregar con splice:", colors.toString() );
+console.log("Después de agregar con splice:", colors.join(" - ") );
+// Eliminar 1 elemento en el indice 2 y agregar 2 elementos en su lugar.
+colors.splice(2, 1, "Rosa", "Cian");
+console.log("Después de agregar con splice:", colors.join(" - ") );
+
 
 // TODO EJERCICIO RÁPIDO: Dam
 // 1. Crea un array 'guestList' con 2 nombres.
@@ -98,18 +116,14 @@ console.log("Después de agregar con splice:", colors.toString() );
 // 4. Elimina al segundo invitado (índice 1) y agrega a otro en su lugar.
 // 4. Muestra la lista final.
 
-/*const guestList = ("Lizet", "Dam");
-   guestList.push ("Emma");
-   guestList.unshift ("Miguel");
-   guestList.splice (1, 1, 'Mario'); 
-   //console.log ( 'Lista final de nuestros invitados:', guestList.join ("-")); 
+const guestList = ["Dam", "Miguel"]; // paso 1
+ guestList.push("Emma"); // paso 2
+ guestList.unshift("Daniel"); // paso 3
+ guestList.splice (1, 1, "Lizet");// paso 4 
+ console.log ("Lista final de invitados:", guestList.join (" - ")); // paso 5
 
 
-const guestList = ['Walter', 'Jesse'];// paso 1
-guestList.push('Hank'); // paso 2
-guestList.unshift('Mike'); // paso 3
-guestList.splice(1, 1, 'Gustavo'); // paso 4 
-console.log('Lista final de invitados:', guestList.join(', ')); // paso 5
+
 
 /*================================================================
    BLOQUE 3: ESTRUCTURAS DE DATOS - PILAS Y COLAS 
@@ -132,6 +146,7 @@ console.log("Historial actual:" + historyStack); // ["google.com", "youtube.com"
 // Presiono el botón de "atrás"
 console.log(`Regresando a: ${ historyStack.pop() }`); // "github.com"
 
+
 /*   2. FIFO (First-In, First-Out) - Cola (Queue)
    Concepto: El primer elemento en entrar es el primero en salir.
 */
@@ -144,8 +159,8 @@ console.log("Cola de impresión:", printQueue); // ["thesis.pdf", "meme.png", "i
 
 // La impresora termina el primer trabajo (shift)
 const printingNow = printQueue.shift();
-
 console.log(`Imprimiendo: ${printingNow}`); // thesis.pdf (El primero que llegó)
+
 
 /* ================================================================
 >>>>>>> main
@@ -177,6 +192,15 @@ console.log(`Imprimiendo: ${printingNow}`); // thesis.pdf (El primero que llegó
    // TODO: RETO FINAL (Simulación de Cajero)
 
 */
+const taskList = []; 
+taskList.push ("Lavar los trastes", "Recoger los juguetes", "Limpiar la silla de la bebe"); // paso 1 
+console.log ("Lista completa de tareas:", taskList.join (" - ")); // paso 2 
+console.log ("Tarea hecha:" + taskList.shift()); // paso 3 y 3.1, agregando el shift dentro del console.log y poniendo + para concatenar.
+taskList.unshift ("Pagar la luz de la casa"); // paso 4 
+console.log ("Lista actualizada de tareas:", taskList.join (" - ")); //paso 5 
+console.log ("Tarea urgente hecha:" + taskList.shift()); // paso 6 
+
+/* Ejercicio Sandra como ejemplo: 
 // Crea un array llamado 'taskList' para gestionar tareas.
    const taskList = [];
 // 1. Agrega 3 tareas usando 'push'.
@@ -195,7 +219,9 @@ console.log(`Imprimiendo: ${printingNow}`); // thesis.pdf (El primero que llegó
    console.log("Lista de tareas final: " + taskList.join(", "));
 
 
-/* ================================================================
+
+
+   /* ================================================================
    BLOQUE 3: BUCLES (LOOPS) 
    ================================================================
    Estructuras que repiten un bloque de código mientras una condición sea verdadera.
@@ -214,13 +240,16 @@ for(let i = 1; i <=5 ; i++ ) {
 // ------------------- Uso de break en ciclos ----------------------------
 // break detiene la ejecución de la iteración en curso y termina el ciclo.
 
+//Recordando el ciclo que se hace que es let como 1er valor, despues la condicion y al final el incremento, 
+
 for(let i = 1; i <=10 ; i++ ) {
     if(i === 6) {
-        console.log("¡Se alcanzó el número 6");
+        console.log("¡Se alcanzó el número 6!");
         break; 
     }
       console.log(`(con break) Número ${i}`);
 }
+
 
 // ===============Ejercicio mentales ====================
 
@@ -249,11 +278,13 @@ console.log("Final", myIteration); //  2
  let jiteration;
 
 for ( jiteration = 0; jiteration < 3; jiteration++ ) {
-   console.log("For loop", jiteration ); //
+   console.log("For loop", jiteration ); // for loop 0, for loop 1, for loop 2
 }
-console.log("Final", jiteration); //
+console.log("Final", jiteration); // 2
 
 // =====================================================
+//Atencion al detalle: punto y coma al final del for, por lo que el bloque siguiente no es parte del for
+//y por lo tanto k vale 5 al finalizar el for ya que no se ejecuta console.log dentro de la condición. 
 let k;
 for ( k = 0; k < 5; k++ )   ; 
 
@@ -277,6 +308,7 @@ for (let i = 0 ; i <= 5; i++ ){
 // --- 2. Ciclo WHILE (Basado en condición) ---
 // Úsalo cuando NO sabes cuántas veces se repetirá, depende de algo externo.
 // Cuidado: Si la condición nunca es falsa, creas un bucle infinito (Infinite Loop).
+// NOTA: Por lo que el while tiene que llevar un break o alguna condición que lo detenga.
 
 /*
 while(  confirm("¿Quieres tu número de la suerte")  ){
@@ -284,7 +316,12 @@ while(  confirm("¿Quieres tu número de la suerte")  ){
     console.log("Tu número de la suerte es: " + numeroSuerte);
 }
 console.log("Gracias por participar");
-*/
+
+NOTA: El ciclo se deiene cuando el usuario presiona "Cancelar" en el confirm, 
+entonces la condicion es falsa, por lo tanto el ciclo termina.
+*/ 
+
+
 
 /* ================================================================
    BLOQUE 4: DIFERENCIAS Y EJERCICIO INTEGRADO 
@@ -298,10 +335,16 @@ console.log("Gracias por participar");
             "Repite esto MIENTRAS el usuario no presione SALIR".
 */
 
-// Imprimier los números del 1 al 5 (usando WHILE)
+// Imprimier los números del 1 al 5 (usando FOR)
 for(let i = 1; i <=5 ; i++ ) {
     console.log(`Número ${i}`);
 }
+
+
+// Imprimir los números del 1 al 5 (usando WHILE) 
+// Aqui lo que rompe el ciclo es i++ ya que cuando i llega a 6 la condición i<=5 es falsa y el ciclo termina.
+// Por lo que si no se pone i++ el ciclo nunca termina (bucle infinito). 
+// Es importante inicializar i antes del ciclo y hacer el incremento dentro del ciclo.
 
 let i = 1;
 while(i<=5){
@@ -312,13 +355,21 @@ while(i<=5){
 // ================================================================
 
 const countries = ["México", "USA", "Canadá", "Japón"];
-// Usando FOR LOOP
+// Usando FOR LOOP 
+
+//Diferencia con el for-each es que aqui se tiene acceso al índice.
+//Diferencia con el for-of es que este solo se usa para recorrer arrays completo y no da acceso al índice.
+//Diferencia con el while es que este necesita una variable externa para el índice porque no tiene inicializacion
+// ni actualizacion, solo tiene la condición.
+
 for (let index = 0; index < countries.length; index++) {
    const element = countries[index];
    console.log(`(for) País en índice ${index}: ${element}`);   
 }
 
-// Usando For OF (ES6+)
+// Usando For OF (ES6+) Sirve para recorrer arrays y otros objetos iterables (con valores) como arrays, strings, maps, sets, etc.
+// No da acceso al índice, solo al valor.
+
 for (const country of countries) {
    console.log(`(for of) País: ${country}`);
 }
@@ -339,6 +390,13 @@ for (const monto of transactions) {
 
 const transactions = [100.00, -50.00, 200.00, -100.00, 500.00];
 let totalBalance = 0;
+
+// usando for of 
+for (movimiento of transactions) { //Recorriendo cada movimiento del array
+   totalBalance += movimiento; //Sumando cada movimiento (valor) a la variable (balance total)
+}; 
+
+console.log ("El balance final es: " + totalBalance); // Imprimiendo el balance final
 
 // usando for-each
 transactions.forEach( (transaction, index, array)=> totalBalance += transaction );
