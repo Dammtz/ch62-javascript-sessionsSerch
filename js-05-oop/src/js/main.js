@@ -1,4 +1,10 @@
+import { changePrincipalTitle } from './modules/changePrincipalTitle.js';
+import { changePrincipal} from './modules/changePrincipalImg.js';
+import { aliceUser } from './modules/literalObject.js';
 
-document.getElementById("title").innerText = "OOP in JavaScript, Cohorte 62";
 
-console.log(`Datos del arreglo participants desde main.js:`, participants); // ['Alice', 'Bob', 'Charlie']
+changePrincipalTitle ("title"); 
+changePrincipal ("cat.jpg");
+console.log (aliceUser.getFullName());
+
+
