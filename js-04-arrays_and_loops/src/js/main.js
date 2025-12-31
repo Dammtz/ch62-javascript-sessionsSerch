@@ -377,7 +377,8 @@ const transactions = [100.00, -50.00, 200.00, -100.00, 500.00];
 let totalBalance = 0;
 
 // usando for of y solo imprimiendo el balance final
-for (monto of transactions) { //Recorriendo cada movimiento del array
+for
+ (monto of transactions) { //Recorriendo cada movimiento del array
    totalBalance += monto; //Sumando cada movimiento (valor) a la variable (balance total)
 }; 
 
